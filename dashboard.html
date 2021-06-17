@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hasika-Clockify</title>
+	<link rel="stylesheet" href="style1.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
+
+</head>
+<body>
+<div class="topnav">
+	<div class="topnav-left">
+		<a class="vl"></a>
+		<a class="menu" onclick="myFunction1()"><img src="menu.svg"></a>
+		<a class="logo"><img src="clockify-logo.svg"></a>
+	</div>
+    <div class="topnav-right">
+    	<div class="dropdown">
+    		
+		  	<a class="dropbtn">HASIKA RAVIRAJ's workspace <img src="dropdown.png" style="width: 10px"></a>
+
+		  <div class="dropdown-content">
+		    <a href="#">Workspaces Manage</a>
+		    <a href="#">HASIKA RAVIRAJ's worksp... Active</a>
+		  </div>
+
+		</div>
+		<div class="flex-container">
+			<button>UPGRADE</button>
+			<div><img src="help.svg"></div>
+		  	<div><img src="notification.svg"></div>
+		  	<img src="login.svg">
+		</div>
+	</div>
+</div>
+<div class="sidebar">
+	<div class="side-icon">
+		<div class="side-icon-position" style="border-left: 3.5px solid #ff9800;  " onclick="myFunction2()"><img src="time-tracker.svg" ></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #673ab7;"><img src="calendar.svg"></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #607d8b;" id="close"></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #8bc34a; background-color: #e4eaee;" onclick="myFunction3()" ><img src="dashboard.svg" ></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #e91e63;"><img src="reports.svg"></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #607d8b;" id="close1"></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #ffc107;"><img src="projects.svg"></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #9c27b0;"><img src="teams.svg"></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #ff5722;"><img src="clients.svg"></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #673ab7;"><img src="tags.svg"></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #009688;"><img src="settings.svg"></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #607d8b;"></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #607d8b;"></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #607d8b;"></div>
+	</div>
+	<div class ="side-text">
+		<div class="side-text-position"  onclick="myFunction2()"><a>TIME TRACKER</a></div>
+		<div class="side-text-position"><a>CALENDAR</a></div>
+		<div class="side-text-position"><a style="font-size: 13.5px;padding-left: 0px; margin-left: -35px;color: #999">ANALYZE</a></div>
+		<div class="side-text-position" style="background-color: #e4eaee;"onclick="myFunction3()"><a>DASHBOARD</a></div>
+		<div class="side-text-position"><a>REPORTS </a><img src="down.svg" style="float: right ;padding :25px 20px;transform: rotate(-90deg);"></div>
+		<div class="side-text-position"><a style="font-size: 13.5px;padding-left: 0px; margin-left: -35px;color: #999">MANAGE</a></div>
+		<div class="side-text-position"><a>PROJECTS</a></div>
+		<div class="side-text-position"><a>TEAM</a></div>
+		<div class="side-text-position"><a>CLIENTS</a></div>
+		<div class="side-text-position"><a>TAGS</a></div>
+		<div class="side-text-position"><a>SETTINGS</a></div>
+		
+	</div>
+
+</div>
+<div class="main-content" id="dash-main">
+	<div class="dash">
+		<div class="dashname">
+		<p>Dashboard</p>
+		</div>
+		<div class="chart-options">
+			<div><p  id='timebox2' >Project <img src="dropdown.png" style="width: 10px"></p></div>
+			<div><p  id='timebox2' >Only me <img src="dropdown.png" style="width: 10px"></p></div>
+			<div class="container-right">
+				<div class="cal">
+				
+					<span class='datepicker-toggle' style="float: left;">
+						<span class='datepicker-toggle-button'></span>
+						<input type='date'class='datepicker-input'>
+
+					</span>
+					<span><p style="float: left; margin-top: 5px; margin-left:15px;">This week</p></span>
+
+				</div>
+				<div class="left-arr"><</div>
+				<div class="right-arr">></div>
+			</div>
+		</div>
+
+	</div>
+	
+	<div class="chart">
+		<div class="chart-top-left">
+			<p>Total time</p>
+			<h4 id='fulltime'>00:00:00</h4>
+		</div>
+		<div class="chart-top-middle">
+			<p>Top project</p>
+		</div>
+		<div class="chart-top-right">
+			<p>Top client</p>
+		</div>
+		<div class="chart-bar">
+			<canvas id="barChart" width="900px" height="300px"></canvas>
+		</div>
+		<div class="chart-bottom">
+			<div class="chart-doughnut">
+
+				<canvas id="doughnutChart" width="200px" height="200px"></canvas>
+				
+			</div>
+			<div class="chart-horizontal">
+				<p id='title'></p>
+				<canvas id="horizontalchart" height="1.5px" width="8px"></canvas>
+			</div>
+		</div>
+		
+	</div>
+	<div class="most-tracked">
+		<div class="most-tracked-box">
+			<p style="float: left;color: #999;"> Most tracked activities</p>
+			<p style="float: right;color: #666;">Top 10  <img src="dropdown.png" style="width: 10px"></p>
+		</div>
+	</div>
+	
+</div>
+<a id="flex2-button"></a>
+</body>
+
+</html>
+
+<script src="script_src.js"></script>
+<script src="chart_src.js"></script>

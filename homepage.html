@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hasika-Clockify</title>
+	<link rel="stylesheet" href="style1.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src=
+    "https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js" >
+    </script>
+    <script type="text/javascript" src=
+    "https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore.js">
+    </script>
+</head>
+<body>
+<div class="topnav">
+	<div class="topnav-left">
+		<a class="vl"></a>
+		<a class="menu" onclick="myFunction()"><img src="menu.svg"></a>
+		<a class="logo"><img src="clockify-logo.svg"></a>
+	</div>
+    <div class="topnav-right">
+    	<div class="dropdown">
+    		
+		  	<a class="dropbtn">HASIKA RAVIRAJ's workspace <img src="dropdown.png" style="width: 10px"></a>
+
+		  <div class="dropdown-content">
+		    <a href="#">Workspaces Manage</a>
+		    <a href="#">HASIKA RAVIRAJ's worksp... Active</a>
+		  </div>
+
+		</div>
+		<div class="flex-container">
+			<button>UPGRADE</button>
+			<div><img src="help.svg"></div>
+		  	<div><img src="notification.svg"></div>
+		  	<img src="login.svg">
+		</div>
+	</div>
+</div>
+<div class="sidebar">
+	<div class="side-icon">
+		<div class="side-icon-position" style="border-left: 3.5px solid #ff9800; background-color: #e4eaee; " onclick="myFunction2()"><img src="time-tracker.svg" ></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #673ab7;"><img src="calendar.svg"></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #607d8b;" id="close"></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #8bc34a;" onclick="myFunction3()" ><img src="dashboard.svg" ></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #e91e63;"><img src="reports.svg"></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #607d8b;" id="close1"></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #ffc107;"><img src="projects.svg"></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #9c27b0;"><img src="teams.svg"></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #ff5722;"><img src="clients.svg"></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #673ab7;"><img src="tags.svg"></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #009688;"><img src="settings.svg"></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #607d8b;"></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #607d8b;"></div>
+		<div class="side-icon-position" style="border-left: 3.5px solid #607d8b;"></div>
+	</div>
+	<div class ="side-text">
+		<div class="side-text-position" style="background-color: #e4eaee;" onclick="myFunction2()"><a>TIME TRACKER</a></div>
+		<div class="side-text-position"><a>CALENDAR</a></div>
+		<div class="side-text-position"><a style="font-size: 13.5px;padding-left: 0px; margin-left: -35px;color: #999">ANALYZE</a></div>
+		<div class="side-text-position" onclick="myFunction3()"><a>DASHBOARD</a></div>
+		<div class="side-text-position"><a>REPORTS </a><img src="down.svg" style="float: right ;padding :25px 20px;transform: rotate(-90deg);"></div>
+		<div class="side-text-position"><a style="font-size: 13.5px;padding-left: 0px; margin-left: -35px;color: #999">MANAGE</a></div>
+		<div class="side-text-position"><a>PROJECTS</a></div>
+		<div class="side-text-position"><a>TEAM</a></div>
+		<div class="side-text-position"><a>CLIENTS</a></div>
+		<div class="side-text-position"><a>TAGS</a></div>
+		<div class="side-text-position"><a>SETTINGS</a></div>
+		
+	</div>
+
+</div>
+<div class="main-content">
+	<div class="box1">
+			
+			<input type="text" id="projectname" name="projectname" placeholder="What are you working on?" maxlength="100" value="">
+			<div class="flex-container" id="flex2" >
+				<div id="plus"><img src="plus-blue.svg"></div>
+				<div id="project"><label for="Project" ><u>Project</u></label></div>
+				<div id="tag2"><img src="tag-gray.svg"></div>
+				<div><span class="currency">$</span></div>
+				<div id="stopwatch"><b>00:00:00</b></div>
+				<input type="button" id="flex2-button" value="START" />
+				
+				<div id="clock-menu">
+					<div><img src="clock-blue.svg" style="vertical-align: middle; "></div>
+					<div><img src="list-blue.svg" style="vertical-align: middle"></div>
+				</div>
+			</div>
+	</div>
+	<div class="card">
+		<div id="no-values">
+			<img src="clockify_illustration.svg">
+			<h3>No recent time entries to show</h3>
+			<p>It looks like you haven't tracked any time lately.</p>
+		</div>
+	    <div id="card-create"></div>
+	</div>
+	
+</div>
+</body>
+</html>
+
+<script src="script_src.js"></script>
+
+
+
